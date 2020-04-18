@@ -33,5 +33,9 @@ defmodule Drop do
   } |> Map.get(planet, 0)  #get gravity of planet, 0 if not in the map
   end
 
-
+  def fall_velocity() do
+    planet = Ask.get_planemo
+    distance = Ask.get_distance
+    fall_velocity(planet, distance)
+  end
 end

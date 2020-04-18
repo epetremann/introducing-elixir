@@ -1,9 +1,12 @@
 defmodule Euler do
   @moduledoc """
+  
   If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9.
   The sum of these multiples is 23.
 
   Find the sum of all the multiples of 3 or 5 below 1000.
+
+  source: https://projecteuler.net/problem=1
   """
 
   @doc """
@@ -23,7 +26,7 @@ defmodule Euler do
   Th sum is calculated using the simplest non optimised method.
   """
   def sum_of_mult_3_5( n \\ 1000) do
-    1..n-1 |> Enum.filter(fn(n) -> Enum.any?([3,5], fn x -> rem(n,x) == 0 end) end) |> Enum.sum()
+    1..n-1 |> Stream.filter(fn(n) -> Enum.any?([3,5], fn x -> rem(n,x) == 0 end) end) |> Enum.sum()
   end
 
   @ doc """

@@ -1,5 +1,5 @@
 defmodule DropTest do
-  use ExUnit.Case
+  use ExUnit.Case, async: true
   doctest Drop
 
   test "test fall_velocity(20)" do
@@ -15,6 +15,7 @@ defmodule DropTest do
     assert Drop.fall_velocity(:mars, 20) == 12.181953866272849
     assert Drop.fall_velocity(:jupiter, 20) == 0
   end
+
 end
 
 
